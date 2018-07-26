@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+        {% block head %}
+        <title>{% block title %}{% endblock %} - TiteldSeite</title>{% endblock %}
+    </head>
+    <body>
+        <div class="headdiv">
+        <h1 id="headline">{% block headline %}{% endblock %}</h1>
+    </div>
+        <div id="content">{% block content %}
+    {% endblock %}</div>
+        <div id="footer">
+            {% block footer %}
+                &copy; Copyright 2018 by <a href="http://institut-fuer-digitales-lernen.de">Institut für digitales Lernen</a>
+                {{ "now"|date('d/m/Y H:i', timezone="Europe/Paris") }}
+            {% endblock %}
+        </div>
+        {% block sidebar %}
+            <ul>
+                <li>vase</li>
+                <li>auto</li>
+                <li>opel</li>
+                <li>nase</li>
+            </ul>
+        {% endblock %}
+        <!--JavaScript at end of body for optimized loading-->
+      <script type="text/javascript" src="js/materialize.js"></script>
+      <script src="./js/jquery-3.3.1.js""></script>
+    </body>
+</html>
