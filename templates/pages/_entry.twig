@@ -1,1 +1,7 @@
-pages
+{% extends '_layout' %}
+{% block main %}
+	<a href="index">back</a>
+	<h1>{{entry.themenueberschrift}}</h1>
+	<h3>{{entry.author}}</h3>
+	<h3>{{entry.postDate | date ('d.m.Y')}}</h3>
+{% endblock %}

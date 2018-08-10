@@ -15,16 +15,16 @@ nav .title {
   color: white;
 }
 
-nav .blue {
+/*nav .blue {
   border: 1px solid blue;
-}
+}*/
 
-nav .nav-title {
+/*nav .nav-title {
   display: inline-block;
-  /*font-size: 32px;*/
-  /*padding: 28px 0;*/
+  font-size: 32px;
+  padding: 28px 0;
   padding: 0px 0;   
-}
+}*/
 
 p {
   line-height: 2rem;
@@ -34,12 +34,59 @@ p {
 }
 
 .headl1{
+  position: relative;
+  left: 15%;
+  width: 70%;
+  top: -75px;
+  border-color: rgb(32, 27, 141);
+  border-style: solid;
+  border-width: 2px;
+  border-top-right-radius: 2px;
+  border-top-left-radius: 2px;
+  line-height: 0;
+  z-index: 30
 }
 
 .headdiv{
-  background: linear-gradient(0deg, #4054AF 0%, #384999 100%);
-  border: 2px solid blue;
+  background: #384999;
+  border: 1px solid blue;
   border-color: #2F3D7F;
+}
+.divkontainer{
+  position: relative;
+  z-index: 10;
+  width: 100%;
+}
+
+img .titleimg{
+  padding: 0;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  border-spacing: 0;
+}
+
+}
+.divtitelbild{
+  position: relative;
+  z-index: 50;
+  width: 70%;
+  left: 15%;
+  height: auto;
+}
+
+.overhalf{
+  position: relative;
+  z-index: 20;
+  background: linear-gradient(0deg, #4054AF 90%, #384999 100%);
+  border: 1px solid blue;
+  border-color: #2F3D7F;
+  height: 150px;
+}
+.underhalf{
+  z-index: 20;
+  background: white;
+  height: 50%;
 }
 
 h1 {
@@ -47,7 +94,7 @@ h1 {
   text-align: center;
   font-size: 4.2rem;
   /*line-height: 110%;*/
-  margin-top: 1em;
+  /*margin-top: 1em;*/
   /*margin: 2.8rem 0 1.68rem 0;*/
   font-size: 2em;
   /*margin: 0.67em 0;*/

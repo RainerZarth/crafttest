@@ -1,8 +1,15 @@
 {
   "require": {
-    "craftcms/cms": "3.0.17.1",
+    "craftcms/cms": "3.0.19",
     "vlucas/phpdotenv": "^2.4.0",
-    "craftcms/ckeditor": "1.0.0-beta.2"
+    "craftcms/ckeditor": "1.0.0-beta.2",
+    "whoisjuan/craft-color-mixer": "1.0.5",
+    "dolphiq/iconpicker": "1.0.5",
+    "supercool/tablemaker": "2.0.1",
+    "verbb/super-table": "2.0.7",
+    "doublesecretagency/craft-matrixcolors": "2.0.1",
+    "craftcms/element-api": "2.5.4",
+    "craftcms/redactor": "2.1.5"
   },
   "autoload": {
     "psr-4": {

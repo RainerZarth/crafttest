@@ -1,0 +1,21 @@
+{% extends '_layout' %}
+{% block main %}
+<div class="row">
+	<div class="col s12">
+{% set query = craft.app.request.getParam('suche') %}
+{% set entries = craft.entries.search(query).orderBy('score').all() %}
+
+{% if entries|length %}
+    <p>{{ entries|length }} results:</p>
+
+    <ul>
+        {% for entry in entries %}
+            <li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>Your search for “{{ query }}” didn’t return any results.</p>
+{% endif %}
+</div>
+</div>
+{% endblock %}

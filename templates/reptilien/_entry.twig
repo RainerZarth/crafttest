@@ -1,1 +1,122 @@
-_entry.twig
+{% extends '_layout' %}
+{% block main %}
+	<div class="headdiv">
+		<h1 class="center-align white-text">{{entry.title}}</h1>
+	</div>
+	<div class="divkontainer" style="height: auto; position: relative;">
+		<div class="overhalf">
+		</div>
+			<div class="headl1 z-depth-3">
+			{% set asset = entry.titelbild.one() %}
+			{% if asset %}
+				<img class="responsive-img center-align" src="{{ asset.url }}" width="100%">
+			{% endif %}
+			</div>
+		<div class="underhalf center-align">
+		</div>
+	</div>
+<div id="Bodi" class="section">
+	<div class="container">
+		<div class="row">
+			{# 				{% for field in entry.type.fields %}
+				<div class="col s12"> {{field}}</div>
+				
+			{% endfor %} #}
+			{# ------------HIER GREIFT DAS MATRIX TWIG ------------------ #}
+			{# EINGEBUNDEN MIT {% include 'matrix' %} #}
+			{% include 'matrix' %}
+		</div>
+	</div>
+</div>
+{% endblock %}
+{# MATRIX SICHERUNG #}
+{# {% set count = 0 %}
+{% for block in entry.matrix.all() %}
+{% if block.type == 'textblock' %}
+	{% set count = count+1 %}
+	<div class="col s12">
+		{{ block.txtblck1 }}
+	</div>
+{% endif %}
+{% if block.type == 'gallery' %}
+	{% set count = count+1 %}
+	<div class="col s12">
+		<div class="carousel carousel-slider" style="height: 600px">
+			{# {{ block.galleryfeld }} #}
+			{# hier die schleife für Assets #}
+			{# {% for image in block.galleryfeld.all()%}
+				
+				{% if image %}
+					<div class="carousel-item">
+						<div style="height: 100%">
+							<div style="height: 80%">
+								<img src="{{image.url}}" width="100%" style="margin-bottom: -20vh">
+							</div>
+							<div class="grey" style="height: 20%; opacity: 0.5">
+								<h2 class="flow-text" style="color: #000000">{{image.bildbeschreibung}}</h2>
+							</div>
+						</div>
+					</div>
+					
+				{% endif %}
+				
+			{% endfor %}
+		</div>
+	</div>
+{% endif %}
+{% if block.type == 'iframe' %}
+	{% set count = count+1 %}
+	<div class="col s12">
+		<div class="video-container">
+			{{ block.iframefield | raw }}
+		</div>
+	</div>
+{% endif %}
+{% if block.type == 'videos' %}
+	{% set count = count+1 %}
+	{% set video = block.videoplayer.one() %}
+	{% if video %}
+		<div class="col s12">
+			<video class="responsive-video" controls name="{{video.title}}" width="100%">
+				<source src="{{video.url}}" type="video/mp4">
+				
+			</video>
+		</div>
+	{% endif %}
+{% endif %}
+{% if block.type == 'collapse' %}
+	{% set count = count+1 %}
+	{% set asset = block.collitems.one() %}
+	{% if asset %}
+		<div class="col s12">
+			<ul class="collapsible">
+				<div class="col s12"><span class="valign-wrapper"><i class="material-icons">landscape</i>
+				{{block.collheader}}</span></div>
+				<img class="col s12" src="{{ asset.url }}">
+				
+				
+				<li>
+					<div class="collapsible-header"><i class="material-icons">info_outline</i>
+					</div>
+					<div class="collapsible-body">
+						{{block.colltext}}
+					</div>
+				</li>
+				<li>
+					<div class="collapsible-header"><i class="material-icons">copyright</i>
+					</div>
+					<div class="collapsible-body">
+						<span>{{asset.bildbeschreibung}}</span>
+						<span>Bild von&nbsp{{asset.bildauthor}}&nbspQuelle:&nbsp
+							<a href="{{asset.bildquelle}}">{{asset.bildquelle}}</a></span>
+							<span>Bildlizenzart:&nbsp{{asset.bildlizenz}}</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+		{% endif %}
+	{% endif %}
+{% endfor %}
+</div>
+<p>Ich habe {{count}} Elemente</p>
+</div> #}
