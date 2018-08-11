@@ -1,0 +1,5 @@
+{
+  "buttons": ["undo","redo","formatting", "bold", "italic", "underline", "unorderedlist", "orderedlist", "indent", "outdent", "sup", "sub", "link", "image", "video"],
+  "plugins": ["fullscreen", "video"],
+  "toolbarFixed": true
+}
