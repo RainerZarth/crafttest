@@ -1,0 +1,47 @@
+{
+    "title": "Daten1",
+    "description": "Tabellenblatt1\n\n\n Daten\n\n Datum, Land, Name, Produkt, Stückzahl, Einzelpreis, Gesamtpreis\n 01. 06. 2016, East, Jones, Pencil, 95, 1, 99€, 189, 05€\n 21. 01. 2016, Central, Kivell, Binder, 50, 19, 99€, 999, 50€\n 02. 09. 2016, Central, Jardine, Pencil, 36, 4, 99€, 179, 64€\n 2/ 26/ 2016, Central, Gil...",
+    "url": "https://docs.google.com/spreadsheets/d/1dZYz4NiAmJXT8agUzFIl0Mq5Y2_7D1gU33b91lVUS2E/edit?usp=embed_facebook&usp=embed_facebook",
+    "type": "link",
+    "tags": [],
+    "feeds": [],
+    "images": [
+        {
+            "url": "https://lh5.googleusercontent.com/5joK9vbDofSCxRf59uFUOSWfXRio8EzBZ7OVwRSx0rlHIPcRHvrm8Ro39_WPG7CkshqkAQ%3Dw1200-h630-p",
+            "width": 1200,
+            "height": 630,
+            "size": 756000,
+            "mime": "image/png"
+        }
+    ],
+    "image": "https://lh5.googleusercontent.com/5joK9vbDofSCxRf59uFUOSWfXRio8EzBZ7OVwRSx0rlHIPcRHvrm8Ro39_WPG7CkshqkAQ%3Dw1200-h630-p",
+    "imageWidth": 1200,
+    "imageHeight": 630,
+    "code": null,
+    "width": null,
+    "height": null,
+    "aspectRatio": null,
+    "authorName": null,
+    "authorUrl": null,
+    "providerIcons": [
+        {
+            "url": "https://ssl.gstatic.com/docs/doclist/images/infinite_arrow_favicon_4.ico",
+            "width": 32,
+            "height": 32,
+            "size": 1024,
+            "mime": "image/x-icon"
+        },
+        {
+            "url": "https://ssl.gstatic.com/docs/spreadsheets/favicon_jfk2.png",
+            "width": 16,
+            "height": 16,
+            "size": 256,
+            "mime": "image/png"
+        }
+    ],
+    "providerIcon": "https://ssl.gstatic.com/docs/doclist/images/infinite_arrow_favicon_4.ico",
+    "providerName": "Google Docs",
+    "providerUrl": "https://google.com",
+    "publishedTime": null,
+    "license": null
+}

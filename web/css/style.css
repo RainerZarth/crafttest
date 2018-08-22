@@ -26,18 +26,26 @@ nav .title {
   padding: 0px 0;   
 }*/
 
+.collapsible-body {
+  padding: 1rem !important;
+}
+
 p {
-  line-height: 2rem;
+  line-height: 1,4rem;
 }
 .headbg {
   background-color: red;
 }
 
+.loes {
+  display: none;
+}
+
 .headl1{
   position: relative;
-  left: 15%;
-  width: 70%;
-  top: -75px;
+  /*left: 15%;
+  width: 70%;*/
+  top: -12rem;
   border-color: rgb(32, 27, 141);
   border-style: solid;
   border-width: 2px;
@@ -69,7 +77,7 @@ img .titleimg{
 }
 .divtitelbild{
   position: relative;
-  z-index: 50;
+  z-index: 1;
   width: 70%;
   left: 15%;
   height: auto;
@@ -77,16 +85,22 @@ img .titleimg{
 
 .overhalf{
   position: relative;
-  z-index: 20;
+  z-index: 0;
   background: linear-gradient(0deg, #4054AF 90%, #384999 100%);
   border: 1px solid blue;
   border-color: #2F3D7F;
-  height: 150px;
+  height: 18rem;
 }
 .underhalf{
-  z-index: 20;
+  z-index: 0;
   background: white;
-  height: 50%;
+  height: 0rem;
+}
+#Bodi{
+  position: absolute;
+  width: 100%;
+  top: 45rem;
+  z-index: 3;
 }
 
 h1 {
@@ -143,3 +157,112 @@ h1 {
 footer.page-footer {
   margin: 0;
 }
+/*--------JPAGINATION-------*/
+.jPaginate{
+    height:34px !important;
+    position:relative !important;
+    color:#a5a5a5 !important;
+    font-size:small;
+    width:200px;
+    box-sizing: content-box;
+}
+.jPaginate a{
+    line-height:15px !important;
+    height:18px !important;
+    cursor:pointer !important;
+    padding:2px 5px !important;
+    margin:2px !important;
+    float:left !important;
+}
+.jPag-control-back{
+  position:absolute !important;
+  left:0px !important;
+}
+.jPag-control-front{
+  position:absolute !important;
+  top:0px !important;
+}
+.jPaginate span{
+    cursor:pointer !important;
+}
+ul.jPag-pages{
+    float:left !important;
+    list-style-type:none !important;
+    margin:0px 0px 0px 0px !important;
+    padding:0px !important;
+    width: 10%;
+}
+ul.jPag-pages li{
+    display:inline !important;
+    float:left !important;
+    padding:0px !important;
+    margin:0px !important;
+}
+ul.jPag-pages li a{
+    float:left !important;
+    padding:2px 5px !important;
+}
+span.jPag-current{
+    cursor:default !important;
+    font-weight:normal !important;
+    line-height:15px !important;
+    height:18px !important;
+    padding:2px 5px !important;
+    margin:2px !important;
+    float:left !important;
+}
+ul.jPag-pages li span.jPag-previous,
+ul.jPag-pages li span.jPag-next,
+span.jPag-sprevious,
+span.jPag-snext,
+ul.jPag-pages li span.jPag-previous-img,
+ul.jPag-pages li span.jPag-next-img,
+span.jPag-sprevious-img,
+span.jPag-snext-img{
+    height:22px !important;
+    margin:2px !important;
+    float:left !important;
+    line-height:18px !important;
+}
+
+ul.jPag-pages li span.jPag-previous,
+ul.jPag-pages li span.jPag-previous-img{
+    margin:2px 0px 2px 2px !important;
+    font-size:12px !important;
+    font-weight:bold !important;
+        width:10px !important;
+
+}
+ul.jPag-pages li span.jPag-next,
+ul.jPag-pages li span.jPag-next-img{
+    margin:2px 2px 2px 0px !important;
+    font-size:12px !important;
+    font-weight:bold !important;
+    width:10px !important;
+}
+span.jPag-sprevious,
+span.jPag-sprevious-img{
+    margin:2px 0px 2px 2px !important;
+    font-size:18px !important;
+    width:15px !important;
+    text-align:right !important;
+}
+span.jPag-snext,
+span.jPag-snext-img{
+    margin:2px 2px 2px 0px !important;
+    font-size:18px !important;
+    width:15px !important;
+     text-align:right !important;
+}
+ul.jPag-pages li span.jPag-previous-img{
+    background:transparent url(../images/previous.png) no-repeat center right;
+            }
+ul.jPag-pages li span.jPag-next-img{
+    background:transparent url(../images/next.png) no-repeat center left;
+            }
+span.jPag-sprevious-img{
+    background:transparent url(../images/sprevious.png) no-repeat center right;
+            }
+span.jPag-snext-img{
+    background:transparent url(../images/snext.png) no-repeat center left;
+            }

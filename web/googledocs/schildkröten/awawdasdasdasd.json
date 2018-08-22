@@ -1,0 +1,39 @@
+{
+    "title": "awawdasdasdasd",
+    "description": null,
+    "url": "https://docs.google.com/document/d/e/2PACX-1vTSwlqQS9BPfl6FBu0BBx8qTb2-SOQG4gNuDxLVKx22ZjDiSQXDk_CwTn2LOtIM7UR4ZL7_P1tTP9cb/pub",
+    "type": "link",
+    "tags": [],
+    "feeds": [],
+    "images": [],
+    "image": null,
+    "imageWidth": null,
+    "imageHeight": null,
+    "code": null,
+    "width": null,
+    "height": null,
+    "aspectRatio": null,
+    "authorName": null,
+    "authorUrl": null,
+    "providerIcons": [
+        {
+            "url": "https://ssl.gstatic.com/docs/doclist/images/infinite_arrow_favicon_4.ico",
+            "width": 32,
+            "height": 32,
+            "size": 1024,
+            "mime": "image/x-icon"
+        },
+        {
+            "url": "https://ssl.gstatic.com/docs/documents/images/kix-favicon6.ico",
+            "width": 16,
+            "height": 16,
+            "size": 256,
+            "mime": "image/x-icon"
+        }
+    ],
+    "providerIcon": "https://ssl.gstatic.com/docs/doclist/images/infinite_arrow_favicon_4.ico",
+    "providerName": "google",
+    "providerUrl": "https://google.com",
+    "publishedTime": null,
+    "license": null
+}

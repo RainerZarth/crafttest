@@ -1,0 +1,32 @@
+{
+    "title": "Daten1",
+    "description": null,
+    "url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTPxL0b3e_wg9hVi_5I15OoSiqS3QBSlv5ZR3zgZI47cQGMunPO2CDBh8_stWrsmAi07TAni9EYGRqC/pubhtml",
+    "type": "link",
+    "tags": [],
+    "feeds": [],
+    "images": [],
+    "image": null,
+    "imageWidth": null,
+    "imageHeight": null,
+    "code": null,
+    "width": null,
+    "height": null,
+    "aspectRatio": null,
+    "authorName": null,
+    "authorUrl": null,
+    "providerIcons": [
+        {
+            "url": "https://ssl.gstatic.com/docs/doclist/images/infinite_arrow_favicon_4.ico",
+            "width": 32,
+            "height": 32,
+            "size": 1024,
+            "mime": "image/x-icon"
+        }
+    ],
+    "providerIcon": "https://ssl.gstatic.com/docs/doclist/images/infinite_arrow_favicon_4.ico",
+    "providerName": "google",
+    "providerUrl": "https://google.com",
+    "publishedTime": null,
+    "license": null
+}

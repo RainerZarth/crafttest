@@ -1,0 +1,60 @@
+{% include '_layout' %}
+{% block main %}
+	
+	<script type="text/javascript">
+		var a = 2;
+	</script>
+	{% set bild_elemente = entry.titelbild_tiere.all() %}
+	{% set matrix_elemente = entry.inhaltTiere.all() %}
+	{% set id_counter = 0 %}
+
+
+	<link rel="stylesheet" href="css/tiere_stylesheet.css">
+    <title>{{entry.title}}</title>
+	</head>
+	<body>
+  	<h1>{{entry.title}}</h1>
+  	<span>{{entry.einleitung}}</span>
+
+  	{# {% set asset = bilder_ordner %} #}
+  	
+  	{% if bild_elemente %}
+  	{#% set second_element = "{{bild_elemente[1].url}}" %#}
+	  	<div class = "row">
+	  		{#% for bild_element in bild_elemente %#}
+	  			<div class = "col s12">
+	  				<img id = {{id_counter}} class = "responsive-img groesse" src= {{bild_elemente[id_counter].url}} onclick = "aendere_bild()">
+	  			</div>
+	  		{#% endfor %#}
+	  	</div>
+  	{% endif %}
+
+  	{% for matrix_element in matrix_elemente %}
+  		{% switch matrix_element.type %}
+  			{% case "textblock" %}
+  				<p>{{matrix_element.ueberschrift}}</p>
+  				<p>{{matrix_element.editor}}</p>
+  			{% case "video" %}
+  				{% set video = matrix_element.videofeld.one() %}
+  				{% if video %}
+  				
+  				<div class = "col s12">
+  					<video class = "responsive-video" controls>
+  						<source src="{{video.url}}" type="video/ogg">
+  					</video>
+  				</div>
+  				{% endif %}
+  		{% endswitch %}
+  	{% endfor %}
+  	<script type="text/javascript">
+		function aendere_bild(){
+			if ((a % 2) == 0){
+				document.getElementById("{{id_counter}}").src = "{{bild_elemente[id_counter + 1].url}}";
+			}
+			else{
+				document.getElementById("{{id_counter}}").src = "{{bild_elemente[id_counter].url}}";
+			}
+			a++;
+		}
+	</script>
+{% endblock %}
