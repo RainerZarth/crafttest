@@ -1,5 +1,8 @@
 {% block matrix %}
 	{% set count = 0 %}
+	<script type="text/javascript">
+		var bool = 0;
+	</script>
 	{% for block in entry.matrix.all() %}
 		
 		{% if block.type == 'textblock' %}
@@ -121,18 +124,108 @@
 											</div>
 										{% endif %}
 										{% if umatrix.type == 'iframe' %}
-												<div class="video-container">
-													{{ umatrix.iframefield | raw }}
-												</div>
+											<div class="video-container">
+												{{ umatrix.iframefield | raw }}
+											</div>
 										{% endif %}
-									{% endfor %}									
+									{% endfor %}
 								{% endfor %}
 							</div>
 						</li>
 					</ul>
 				</div>
 			{% endif %}
+			{# --------------------SUPERTABLE ENDE---------------- #}
+			{# ---------- start Google Dok--------------- #}
+			{% if block.type == 'googledokument' %}
+				{% set count = count+1 %}
+				{% set asset = block.dokument.one() %}
+				
+				{% if asset %}
+					{% set embeddedAsset = craft.embeddedAssets.get(asset) %}
+					<div id="embedasset" class="col s12">
+						<iframe frameborder="0" src="{{ embeddedAsset.url}}" width="100%" height="600px"></iframe>
+						
+					</div>
+				{% endif %}
+			{% endif %}
+			{# ---------- Ende Google Dok--------------- #}
+			{# --------------------QUIZ START---------------- #}
+			{% if block.type == 'quiz' %}
+				{% set count = count + 1 %}
+				<div class="col s12">
+					<ul class="collapsible">
+						<li>
+							<div class="collapsible-header">
+								<span class="valign-wrapper">
+									<i class="material-icons">live_help</i>&nbsp{{block.titel}}
+								</span>
+							</div>
+							<div class="collapsible-body">
+								{# -------HIER KOMMEN DIE AUFGABEN IM SUPERTABLE REIN------- #}
+								{% for row in block.inhalt.all() %}
+									{% set qnummer = 0 %}
+
+									
+									<div id ="paginateer">
+										{% for umatrix in row.quizanlegen.all() %}
+											{% if umatrix.type == 'mcFrage' %}
+												{% set qnummer = qnummer + 1 %}
+												<div id="p{{ qnummer }}">
+													{{umatrix.fragetext}}
+													{% for row in umatrix.antworten %}
+														<p>
+															<label>
+																<input value="aid{{row.antwortnr}}" name="group{{qnummer}}" class="with-gap" type="radio" />
+																<span value="{{row.antwortnr}}">{{row.antworttext}}</span>
+															</label>
+														</p>
+													{% endfor %}
+													<button class="waves-effect waves-light btn-small" id="los{{qnummer}}" onclick= "jipee()" >Beantworten
+													<i class="material-icons right">send</i>
+													</button>
+													{% for row in umatrix.antworten %}
+														<p class="loes" id="{{qnummer}}aid{{row.antwortnr}}">{{row.loesungstext}}</p>
+													{% endfor %}
+												{% endif %}
+												<p id="output{{qnummer}}"></p>
+												{# /*---QUIZ SCRIPT---*/ #}
+											
+												<script type="text/javascript">
+												function jipee(){
+												var qnummer = "{{qnummer}}" ;
+													if (bool == 0){
+														bool = 1;
+														qnummer = 1;
+													}
+													var selector = 'group' + qnummer;
+													var coffee = $("input[name=" + selector + "]");
+
+													var id = "";
+													var i;
+													for (i = 0; i < coffee.length; i++) {
+														if (coffee[i].checked) {
+															id = coffee[i].value;
+
+														}
+													}
+													
+													id = qnummer + id;
+													var loesung = document.getElementById(id).innerHTML;
+													document.getElementById("output" + qnummer).innerHTML = loesung;
+												}
+												</script>
+											</div>
+										{% endfor %}
+									</div>
+								{% endfor %}
+							</div>
+						</li>
+					</ul>
+				</div>
+			{% endif %}
+			{# --------------------QUIZ ENDE---------------- #}
 		{% endfor %}
-	</div>
-</div>
-{% endblock %}
+		<script type="text/javascript">
+		</script>
+	{% endblock %}

@@ -1,11 +1,23 @@
 {% extends '_layout' %}
 {% block main %}
+	</head>
+	<body>
+		{% include 'menu' %}
 	<div class="headdiv">
 		{% for entry in craft.entries.section('reptilien').limit(10).all() %}
 			<h1 id="headline">{{entry.mainheader}}</h1>
 		{% endfor %}
 	</div>
 	{% for entry in craft.entries.section('reptilien').limit(10).all() %}
+	<div style="border-bottom-color:black; border-bottom-style: solid; border-bottom-width: 1px; position: relative; bottom: 5px;">
+		<p><a href="{{entry.url}}">&nbsp&nbsp{{entry.title}}</a> erstellt von {{entry.author}} am {{entry.postDate | date ('d.m.Y')}}
+		</p>
+	</div>
+		{# <div id="{{entry.id}}flip" class="flip">&copy;</div> #}
+		{# <div id="{{entry.id}}panel" class="panel">{{entry.copyright}}</div> #}
+	{% endfor %}
+	{# nachste sektion #}
+	{% for entry in craft.entries.section('tiere').limit(10).all() %}
 	<div style="border-bottom-color:black; border-bottom-style: solid; border-bottom-width: 1px; position: relative; bottom: 5px;">
 		<p><a href="{{entry.url}}">&nbsp&nbsp{{entry.title}}</a> erstellt von {{entry.author}} am {{entry.postDate | date ('d.m.Y')}}
 		</p>
@@ -22,6 +34,4 @@
 }) %}
 
 </div>
-			{% includeJsFile "js/materialize.js" %}
-		{% includeJsFile "js/jquery-3.3.1.js" %}
 {% endblock %}

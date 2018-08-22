@@ -2,67 +2,45 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+		<script type="text/javascript" src="js/materialize.js"></script>
+		<script type="text/javascript" src="js/jquery.easyPaginate.js"></script>
 		{% do view.registerCssFile("css/materialize.css") %}
 		{% do view.registerCssFile("css/style.css") %}
 		
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-		{# 		<link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-		<link href="" type="text/css" rel="stylesheet" media="screen,projection"/> #}
-		<title> - TiteldSeite</title>
-	</head>
-	<body>
-		<div class="navbar-fixed blue">
-			<ul id="dropdown1" class="dropdown-content">
-				<li>{% include 'login' %}</li>
-				<li class="divider"></li>
-				<li><a href="#!">three</a></li>
-			</ul>
-			<nav>
-				<div class="nav-wrapper blue">
-					<a href="#!" class="brand-logo center">Logo</a>
-					<form action="{{ url('ergebnisse') }}" class="right" style="width:20%">
-						<div class="input-field">
-							<input id="search" type="search" name="suche" placeholder="Suche" required>
-							<label class="label-icon" for="search"><i class="material-icons">search</i></label>
-							<i class="material-icons">close</i>
-						</div>
-					</form>
-					<ul class="left hide-on-med-and-down">
-						<li><a href="/">Index</a></li>
-						<li>
-							<a class="dropdown-trigger" href="#" data-target="dropdown1"><i class="material-icons right">account_circle</i>Anmelden</a>
-						</li>
-					</ul>
-				</div>
-			</nav>
-		</div>
-		{% block main %}{% endblock %}
-		<p>&nbsp</p>
 		
-		<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
-		<script type="text/javascript" src="js/materialize.js"></script>
+		{% block main %}{% endblock %}
+		
+		<p>&nbsp</p>
+		  <script type="text/javascript">
+			$( window ).on( "load", function() {
+       			$('#paginateer').easyPaginate({
+					paginateElement: 'div',
+					elementsPerPage: 1,
+					effect: 'fade'
+				});
+    		});	
+		</script>		
 		<script type="text/javascript">
 			document.addEventListener('DOMContentLoaded', function() {
-		var elems = document.querySelectorAll('.carousel');
-		var instances = M.Carousel.init(elems, {fullWidth: true, indicators:true});
-		});
-		</script>
-		<script type="text/javascript">
-					document.addEventListener('DOMContentLoaded', function() {
+				/*bildgallery skript*/
+				var elems = document.querySelectorAll('.carousel');
+				var instances1 = M.Carousel.init(elems, {fullWidth: true, indicators:true});
+				/*akkordeon skript*/
 				var colelems = document.querySelectorAll('.collapsible');
-				var instances = M.Collapsible.init(colelems, {accordion: false});
+				var instances2 = M.Collapsible.init(colelems, {accordion: false});
+				/*Menü Suche*/
 				var dropelems = document.querySelectorAll('.dropdown-trigger');
-    			var instances = M.Dropdown.init(dropelems, {closeOnClick: true, constrainWidth: false});
+				var instances3 = M.Dropdown.init(dropelems, {closeOnClick: true, constrainWidth: false});
+				/*paginateer*/
+				/*var pageelems = document.querySelectorAll('.paginateer');
+				var instances4 = easyPaginate.init(pageelems, { paginateElement: 'div', elementsPerPage: 1, effect: 'fade'});*/	
 			});
 		</script>
+		<script type="text/javascript">
+		</script>
 	</body>
-	{# 	{% for entry in craft.entries.section('reptilien').limit(10).all() %}
-		<script>$(document).ready(function(){
-		$("#{{entry.id}}flip").click(function(){
-		$("#{{entry.id}}panel").slideToggle("slow");
-		});
-		});</script>
-	{% endfor %} #}
 </html>

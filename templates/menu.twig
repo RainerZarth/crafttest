@@ -1,0 +1,27 @@
+{% block menu %}
+<div class="navbar-fixed blue">
+	<ul id="dropdown1" class="dropdown-content">
+		<li>{% include 'login' %}</li>
+		<li class="divider"></li>
+		<li><a href="#!">three</a></li>
+	</ul>
+	<nav>
+		<div class="nav-wrapper blue">
+			<a href="#!" class="brand-logo center">Logo</a>
+			<form action="{{ url('ergebnisse') }}" class="right" style="width:20%">
+				<div class="input-field">
+					<input id="search" type="search" name="suche" placeholder="Suche" required>
+					<label class="label-icon" for="search"><i class="material-icons">search</i></label>
+					<i class="material-icons">close</i>
+				</div>
+			</form>
+			<ul class="left hide-on-med-and-down">
+				<li><a href="/">Index</a></li>
+				<li>
+					<a class="dropdown-trigger" href="#" data-target="dropdown1"><i class="material-icons right">account_circle</i>Anmelden</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+</div>
+{% endblock %}

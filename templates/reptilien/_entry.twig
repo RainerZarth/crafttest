@@ -1,17 +1,22 @@
 {% extends '_layout' %}
 {% block main %}
+	</head>
+	<body>
+		{% include 'menu' %}
 	<div class="headdiv">
 		<h1 class="center-align white-text">{{entry.title}}</h1>
 	</div>
 	<div class="divkontainer" style="height: auto; position: relative;">
 		<div class="overhalf">
 		</div>
-			<div class="headl1 z-depth-3">
+		<div class="container">
+			<div class="headl1 z-depth-3 col s12">
 			{% set asset = entry.titelbild.one() %}
 			{% if asset %}
 				<img class="responsive-img center-align" src="{{ asset.url }}" width="100%">
 			{% endif %}
 			</div>
+		</div>
 		<div class="underhalf center-align">
 		</div>
 	</div>
