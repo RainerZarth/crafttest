@@ -1,5 +1,7 @@
 {% extends '_layout' %}
 {% block main %}
+	<title>{% set titel = craft.entries.section('homepage').one() %}
+		{{titel.inhaltsverzeichnis}}</title>
 	</head>
 	<body>
 		{% include 'menu' %}
@@ -29,9 +31,11 @@
 	{{ "now"|date('d/m/Y H:i', timezone="Europe/Paris") }}
 
 
-	{% set entries = craft.entries({
-    section: 'reptilien'
-}) %}
+	{% set entries = craft.entries({ section: 'reptilien'}) %}
 
 </div>
+<div style="border-bottom-color: black;"></div>
 {% endblock %}
+
+
+

@@ -1,19 +1,22 @@
 {% do view.registerAssetBundle("plugins\\dolphiq\\iconpicker\\assets\\sharedAsset") %}
 <!DOCTYPE html>
-<html lang="en">
+	<html lang="de">
 	<head>
-		<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
-		<script type="text/javascript" src="js/materialize.js"></script>
-		<script type="text/javascript" src="js/jquery.easyPaginate.js"></script>
-		{% do view.registerCssFile("css/materialize.css") %}
-		{% do view.registerCssFile("css/style.css") %}
+		<script type="text/javascript" src="http://testing.multimedia-lernen.de/js/jquery-3.3.1.js"></script>
+		<script type="text/javascript" src="http://testing.multimedia-lernen.de/js/materialize.js"></script>
+		<script type="text/javascript" src="http://testing.multimedia-lernen.de/js/jquery.easyPaginate.js"></script>
+		{% do view.registerCssFile("http://testing.multimedia-lernen.de/css/materialize.css") %}
+		{% do view.registerCssFile("http://testing.multimedia-lernen.de/css/style.css") %}
 		
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		{# materialize icons #}
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-		
+		{# flag icons #}
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/css/flag-icon.min.css" />
+
+
 		{% block main %}{% endblock %}
-		
 		<p>&nbsp</p>
 		  <script type="text/javascript">
 			$( window ).on( "load", function() {

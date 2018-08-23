@@ -1,27 +1,59 @@
 {% block menu %}
-<div class="navbar-fixed blue">
-	<ul id="dropdown1" class="dropdown-content">
-		<li>{% include 'login' %}</li>
-		<li class="divider"></li>
-		<li><a href="#!">three</a></li>
-	</ul>
-	<nav>
-		<div class="nav-wrapper blue">
-			<a href="#!" class="brand-logo center">Logo</a>
-			<form action="{{ url('ergebnisse') }}" class="right" style="width:20%">
-				<div class="input-field">
-					<input id="search" type="search" name="suche" placeholder="Suche" required>
-					<label class="label-icon" for="search"><i class="material-icons">search</i></label>
-					<i class="material-icons">close</i>
-				</div>
-			</form>
-			<ul class="left hide-on-med-and-down">
-				<li><a href="/">Index</a></li>
+	<div class="navbar-fixed blue">
+		{% requireLogin %}
+		<ul id="dropdown1" class="dropdown-content">
+			<li>{% include 'login' %}</li>
+			<li class="divider"></li>
+			<li><a href="logout">Abmelden</a></li>
+		</ul>
+		<ul id="dropdown2" class="dropdown-content">
+			
+			{% set langSwitcher = craft.app.sites.getAllSites() %}
+			{% for lang in langSwitcher %}
+				{# Set homepage as default #}
+				{% set url = alias(lang.baseUrl) %}
+				{# Entry is defined #}
+				{% if entry is defined %}
+					{# Check if that entry exists in other locale #}
+					{% set otherLocaleEntry = craft.entries.siteId(lang.id).id(entry.id).one() %}
+					{% if otherLocaleEntry %}
+						{% set url = otherLocaleEntry.url %}
+					{% endif %}
+					{# Category is defined #}
+				{% elseif category is defined %}
+					{# Check if that entry exists in other locale #}
+					{% set otherLocaleCat = craft.categories.siteId(lang.id).id(category.id).one() %}
+					{% if otherLocaleCat %}
+						{% set url = otherLocaleCat.url %}
+					{% endif %}
+				{% endif %}
 				<li>
-					<a class="dropdown-trigger" href="#" data-target="dropdown1"><i class="material-icons right">account_circle</i>Anmelden</a>
+					<a href="{{url}}" {% if lang.id == currentSite.id %}class="active"{% endif %}>{{lang.language|upper}}</a>
 				</li>
-			</ul>
-		</div>
-	</nav>
-</div>
+			{% endfor %}
+		</ul>
+		<nav>
+			<div class="nav-wrapper blue">
+				<a href="#!" class="brand-logo center">Logo</a>
+				<a href="_entry" ></a>
+				<form action="{{ url('ergebnisse') }}" class="right" style="width:20%">
+					<div class="input-field">
+						<input id="search" type="search" name="suche" placeholder="Suche" required>
+						<label class="label-icon" for="search"><i class="material-icons">search</i></label>
+						<i class="material-icons">close</i>
+					</div>
+				</form>
+				<ul class="left hide-on-med-and-down">
+					<li><a href="/">Index</a></li>
+					<li><a href="registration">Registrieren<i class="material-icons right">assignment</i></a></li>
+					<li>
+						<a class="dropdown-trigger" href="#" data-target="dropdown2"><i class="material-icons right">language</i>Sprache</a>
+					</li>
+					<li>
+						<a class="dropdown-trigger" href="#" data-target="dropdown1"><i class="material-icons right">account_circle</i>Anmelden</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</div>
 {% endblock %}

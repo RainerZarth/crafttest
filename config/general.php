@@ -32,7 +32,7 @@ return [
     // Dev environment settings
     'dev' => [
         // Base site URL
-        'siteUrl' => null,
+        'siteUrl' => 'http://testing.multimedia-lernen.de/',
 
         // Dev Mode (see https://craftcms.com/support/dev-mode)
         'devMode' => true,

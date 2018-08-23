@@ -3,8 +3,14 @@
  * Craft web bootstrap file
  */
 
+//root path
+$root = dirname(__DIR__, 2);
+
+//tell Craft to serve the english website
+define('CRAFT_SITE', 'english');
+
 // Set path constants
-define('CRAFT_BASE_PATH', dirname(__DIR__));
+define('CRAFT_BASE_PATH', $root);
 define('CRAFT_VENDOR_PATH', CRAFT_BASE_PATH.'/vendor');
 
 // Load Composer's autoloader
