@@ -1,41 +1,47 @@
 {% extends '_layout' %}
 {% block main %}
 	<title>{% set titel = craft.entries.section('homepage').one() %}
-		{{titel.inhaltsverzeichnis}}</title>
-	</head>
-	<body>
-		{% include 'menu' %}
+	{{titel.inhaltsverzeichnis}}</title>
+</head>
+<body>
+	{% include 'menu' %}
 	<div class="headdiv">
 		{% for entry in craft.entries.section('reptilien').limit(10).all() %}
 			<h1 id="headline">{{entry.mainheader}}</h1>
 		{% endfor %}
 	</div>
-	{% for entry in craft.entries.section('reptilien').limit(10).all() %}
+	{% set entry = craft.entries.section('reptilien') %}
+	<ul>
+        {% nav page in entry %}
+            <li>
+                <p><a href="{{page.url}}">&nbsp&nbsp{{page.title}}</a> erstellt von {{page.author}} am {{page.postDate | date ('d.m.Y')}}</p>
+
+                {% ifchildren %}
+                    <ul style="padding-left: 2rem;">
+                        {% children %}
+                    </ul>
+                {% endifchildren %}
+            </li>
+        {% endnav %}
+    </ul>
+
 	<div style="border-bottom-color:black; border-bottom-style: solid; border-bottom-width: 1px; position: relative; bottom: 5px;">
-		<p><a href="{{entry.url}}">&nbsp&nbsp{{entry.title}}</a> erstellt von {{entry.author}} am {{entry.postDate | date ('d.m.Y')}}
-		</p>
 	</div>
-		{# <div id="{{entry.id}}flip" class="flip">&copy;</div> #}
-		{# <div id="{{entry.id}}panel" class="panel">{{entry.copyright}}</div> #}
-	{% endfor %}
+	{# <div id="{{entry.id}}flip" class="flip">&copy;</div> #}
+	{# <div id="{{entry.id}}panel" class="panel">{{entry.copyright}}</div> #}
+	
 	{# nachste sektion #}
 	{% for entry in craft.entries.section('tiere').limit(10).all() %}
-	<div style="border-bottom-color:black; border-bottom-style: solid; border-bottom-width: 1px; position: relative; bottom: 5px;">
-		<p><a href="{{entry.url}}">&nbsp&nbsp{{entry.title}}</a> erstellt von {{entry.author}} am {{entry.postDate | date ('d.m.Y')}}
+		<div style="border-bottom-color:black; border-bottom-style: solid; border-bottom-width: 1px; position: relative; bottom: 5px;">
+			<p><a href="{{entry.url}}">&nbsp&nbsp{{entry.title}}</a> erstellt von {{entry.author}} am {{entry.postDate | date ('d.m.Y')}}
 		</p>
 	</div>
-		{# <div id="{{entry.id}}flip" class="flip">&copy;</div> #}
-		{# <div id="{{entry.id}}panel" class="panel">{{entry.copyright}}</div> #}
-	{% endfor %}
-	<div id="footer">&copy; Copyright 2018 by <a href="http://institut-fuer-digitales-lernen.de">Institut für digitales Lernen</a>
-	{{ "now"|date('d/m/Y H:i', timezone="Europe/Paris") }}
-
-
-	{% set entries = craft.entries({ section: 'reptilien'}) %}
-
+	{# <div id="{{entry.id}}flip" class="flip">&copy;</div> #}
+	{# <div id="{{entry.id}}panel" class="panel">{{entry.copyright}}</div> #}
+{% endfor %}
+<div id="footer">&copy; Copyright 2018 by <a href="http://institut-fuer-digitales-lernen.de">Institut für digitales Lernen</a>
+{{ "now"|date('d/m/Y H:i', timezone="Europe/Paris") }}
+{% set entries = craft.entries({ section: 'reptilien'}) %}
 </div>
 <div style="border-bottom-color: black;"></div>
 {% endblock %}
-
-
-

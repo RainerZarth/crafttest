@@ -4,6 +4,8 @@
 		<ul id="dropdown1" class="dropdown-content">
 			<li>{% include 'login' %}</li>
 			<li class="divider"></li>
+			<li><a href="http://testing.multimedia-lernen.de/userprofile">Benutzerprofil</a></li>
+			<li class="divider"></li>
 			<li><a href="logout">Abmelden</a></li>
 		</ul>
 		<ul id="dropdown2" class="dropdown-content">
@@ -32,6 +34,9 @@
 				</li>
 			{% endfor %}
 		</ul>
+		<ul id="dropdown3" class="dropdown-content">
+			<li>{% include 'registration' %}</li>
+		</ul>
 		<nav>
 			<div class="nav-wrapper blue">
 				<a href="#!" class="brand-logo center">Logo</a>
@@ -45,12 +50,12 @@
 				</form>
 				<ul class="left hide-on-med-and-down">
 					<li><a href="/">Index</a></li>
-					<li><a href="registration">Registrieren<i class="material-icons right">assignment</i></a></li>
+					<li><a class="dropdown-trigger" href="" data-target="dropdown3"><i class="material-icons right">assignment</i>Registrieren</a></li>
 					<li>
-						<a class="dropdown-trigger" href="#" data-target="dropdown2"><i class="material-icons right">language</i>Sprache</a>
+						<a class="dropdown-trigger" href="" data-target="dropdown2"><i class="material-icons right">language</i>Sprache</a>
 					</li>
 					<li>
-						<a class="dropdown-trigger" href="#" data-target="dropdown1"><i class="material-icons right">account_circle</i>Anmelden</a>
+						<a class="dropdown-trigger" href="" data-target="dropdown1"><i class="material-icons right">account_circle</i>Anmelden</a>
 					</li>
 				</ul>
 			</div>

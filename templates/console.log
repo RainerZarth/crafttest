@@ -1,0 +1,51 @@
+2018-07-18 16:02:27 [-][-][-][error][craft\db\Connection::open] Connection::dsn cannot be empty.
+2018-07-18 16:02:27 [-][-][-][trace][yii\base\Application::bootstrap] Bootstrap with craft\queue\Queue::bootstrap()
+2018-07-18 16:02:27 [-][-][-][trace][yii\base\Controller::runAction] Route to run: setup/welcome
+2018-07-18 16:02:27 [-][-][-][trace][yii\base\InlineAction::runWithParams] Running action: craft\console\controllers\SetupController::actionWelcome()
+2018-07-18 16:02:27 [-][-][-][trace][yii\base\Controller::runAction] Route to run: setup/security-key
+2018-07-18 16:02:27 [-][-][-][trace][yii\base\InlineAction::runWithParams] Running action: craft\console\controllers\SetupController::actionSecurityKey()
+2018-07-18 16:02:27 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'APACHE_RUN_DIR' => '/var/run/apache2'
+    'APACHE_PID_FILE' => '/var/run/apache2/apache2.pid'
+    'COMPOSER_HOME' => '/storage/av01040'
+    'COMPOSER_BINARY' => '/storage/av01040/composer.phar'
+    'COMPOSER_DEV_MODE' => '1'
+    'PATH' => '/storage/av01040/www/craft-temp/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'COMPOSER_ROOT_VERSION' => '1.0.33'
+    'APACHE_LOCK_DIR' => '/var/lock/apache2'
+    'LANG' => 'C'
+    'APACHE_RUN_USER' => 'av01040'
+    'APACHE_RUN_GROUP' => 'av01040'
+    'APACHE_LOG_DIR' => '/storage/av01040/logs'
+    'PWD' => '/storage/av01040/www/craft-temp'
+    'PHP_SELF' => 'craft'
+    'SCRIPT_NAME' => 'craft'
+    'SCRIPT_FILENAME' => 'craft'
+    'PATH_TRANSLATED' => 'craft'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1531954947.6945
+    'REQUEST_TIME' => 1531954947
+    'argv' => [
+        0 => 'craft'
+        1 => 'setup/welcome'
+    ]
+    'argc' => 2
+    'ENVIRONMENT' => 'dev'
+    'SECURITY_KEY' => ''
+    'DB_DRIVER' => 'mysql'
+    'DB_SERVER' => 'localhost'
+    'DB_USER' => 'root'
+    'DB_PASSWORD' => ''
+    'DB_DATABASE' => ''
+    'DB_SCHEMA' => 'public'
+    'DB_TABLE_PREFIX' => ''
+    'DB_PORT' => ''
+]

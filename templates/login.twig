@@ -1,5 +1,5 @@
 {% block login %}
-
+<div class="z-depth-3">
 <form method="post" accept-charset="UTF-8">
     {{ csrfInput() }}
     <input type="hidden" name="action" value="users/login">
@@ -7,23 +7,19 @@
     <h3><label for="loginName">Benutzername oder Email</label></h3>
     <input id="loginName" type="text" name="loginName"
         value="{{ craft.app.user.rememberedUsername }}">
-
     <h3><label for="password">Password</label></h3>
     <input id="password" type="password" name="password">
-
+<br>
     <label>
-        <input type="checkbox" name="rememberMe" value="1">
-        Remember me
+        <input type="checkbox" name="rememberMe" value="1">Zugangsdaten merken
     </label>
-
     <input type="submit" value="Login">
 
     {% if errorMessage is defined %}
         <p>{{ errorMessage }}</p>
     {% endif %}
 </form>
-
-<p><a href="{{ url('vergessen') }}">Passwort vergessen?</a></p>
-
-<p><a href="{{ url('registration') }}">Registrieren</a></p>
+</div>
+<a href="{{ url('vergessen') }}">Passwort vergessen?</a>
+<a href="{{ url('registration') }}">Registrieren</a>
 {% endblock %}

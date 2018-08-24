@@ -15,26 +15,24 @@
 		{% if block.type == 'gallery' %}
 			{% set count = count+1 %}
 			<div class="col s12">
-				<div class="carousel carousel-slider" style="height: 600px">
-					{# {{ block.galleryfeld }} #}
-					{# hier die schleife für Assets #}
-					{% for image in block.galleryfeld.all()%}
-						
-						{% if image %}
-							<div class="carousel-item">
-								<div style="height: 100%">
-									<div style="height: 80%">
-										<img src="{{image.url}}" width="100%" style="margin-bottom: -20vh">
+				<div class="slider">
+					<ul class="slides">
+						{# {{ block.galleryfeld }} #}
+						{# hier die schleife für Assets #}
+						{% for image in block.galleryfeld.all()%}
+							{% if image %}
+								<li>
+									<img class="responsive-img" src="{{image.url}}" width="100%">
+									<div class="caption center-align galleriebox">
+										<h3>{{image.bildbeschreibung}}</h3>
+										<span>Bild von&nbsp{{image.bildauthor}}&nbspQuelle:&nbsp
+										<a href="{{asset.bildquelle}}">{{image.bildquelle}}</a></span>
+										<span>Bildlizenzart:&nbsp{{image.bildlizenz}}</span>
 									</div>
-									<div class="grey" style="height: 20%; opacity: 0.5">
-										<h2 class="flow-text" style="color: #000000">{{image.bildbeschreibung}}</h2>
-									</div>
-								</div>
-							</div>
-							
-						{% endif %}
-						
-					{% endfor %}
+								</li>
+							{% endif %}
+						{% endfor %}
+					</ul>
 				</div>
 			</div>
 		{% endif %}
@@ -165,7 +163,6 @@
 								{# -------HIER KOMMEN DIE AUFGABEN IM SUPERTABLE REIN------- #}
 								{% for row in block.inhalt.all() %}
 									{% set qnummer = 0 %}
-
 									
 									<div id ="paginateer">
 										{% for umatrix in row.quizanlegen.all() %}
@@ -190,7 +187,7 @@
 												{% endif %}
 												<p id="output{{qnummer}}"></p>
 												{# /*---QUIZ SCRIPT---*/ #}
-											
+												
 												<script type="text/javascript">
 												function jipee(){
 												var qnummer = "{{qnummer}}" ;
@@ -200,13 +197,11 @@
 													}
 													var selector = 'group' + qnummer;
 													var coffee = $("input[name=" + selector + "]");
-
 													var id = "";
 													var i;
 													for (i = 0; i < coffee.length; i++) {
 														if (coffee[i].checked) {
 															id = coffee[i].value;
-
 														}
 													}
 													

@@ -16,7 +16,7 @@
     {% from _self import errorList %}
 
     <h3><label for="username">Username</label></h3>
-    <input id="username" type="text" name="username"
+    <input id="cusername" type="text" name="username"
         {%- if user is defined %} value="{{ user.username }}"{% endif -%}>
 
     {% if user is defined %}
@@ -24,7 +24,7 @@
     {% endif %}
 
     <h3><label for="email">Email</label></h3>
-    <input id="email" type="text" name="email"
+    <input id="cemail" type="text" name="email"
         {%- if user is defined %} value="{{ user.email }}"{% endif %}>
 
     {% if user is defined %}
@@ -32,11 +32,11 @@
     {% endif %}
 
     <h3><label for="password">Password</label></h3>
-    <input id="password" type="password" name="password">
+    <input id="cpassword" type="password" name="password">
 
     {% if user is defined %}
         {{ errorList(user.getErrors('password')) }}
     {% endif %}
-
-    <input type="submit" value="Register">
+<br>
+<button class="waves-effect waves-light btn-small" type="submit" value="Register"><i class="material-icons right">submit</i>Registrieren </button>
 </form>

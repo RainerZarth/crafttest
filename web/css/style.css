@@ -25,6 +25,9 @@ nav .title {
   padding: 28px 0;
   padding: 0px 0;   
 }*/
+.galleriebox {
+  top: 85% !important;
+}
 
 .collapsible-body {
   padding: 1rem !important;
@@ -43,9 +46,9 @@ p {
 
 .headl1{
   position: relative;
-  /*left: 15%;
+/*  left: 15%;
   width: 70%;*/
-  top: -12rem;
+  /*top: 12rem;*/
   border-color: rgb(32, 27, 141);
   border-style: solid;
   border-width: 2px;
@@ -62,6 +65,7 @@ p {
 }
 .divkontainer{
   position: relative;
+  top: 4rem;
   z-index: 10;
   width: 100%;
 }
@@ -84,23 +88,33 @@ img .titleimg{
 }
 
 .overhalf{
-  position: relative;
+  position: absolute;
   z-index: 0;
   background: linear-gradient(0deg, #4054AF 90%, #384999 100%);
   border: 1px solid blue;
   border-color: #2F3D7F;
+  top: 11rem;
+  width: 100%;
   height: 18rem;
 }
 .underhalf{
   z-index: 0;
   background: white;
-  height: 0rem;
+  height: 4rem;
 }
 #Bodi{
-  position: absolute;
+  position: relative;
   width: 100%;
-  top: 45rem;
+  top: 0;
   z-index: 3;
+}
+.navigating{
+  position: absolute;
+  width: 12%;
+  left: 1rem;
+  top: 15rem;
+  z-index: 50;
+  padding-left: 2rem;
 }
 
 h1 {
@@ -158,7 +172,7 @@ footer.page-footer {
   margin: 0;
 }
 /*--------JPAGINATION-------*/
-.jPaginate{
+/*.jPaginate{
     height:34px !important;
     position:relative !important;
     color:#a5a5a5 !important;
@@ -266,3 +280,4 @@ span.jPag-sprevious-img{
 span.jPag-snext-img{
     background:transparent url(../images/snext.png) no-repeat center left;
             }
+*/
