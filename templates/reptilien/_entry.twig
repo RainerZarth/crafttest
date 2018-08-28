@@ -24,7 +24,7 @@
 	<div class="navigating z-depth-5 blue">
 			<h6 class="white-text">Inhaltsverzeichnis:</h6>
 			{% set kapcount = 0 %}
-			{% set navig = craft.entries.section('reptilien') %}		
+			{% set navig = craft.entries.section('reptilien').all() %}		
 			<ul>
 				{% nav page in navig %}
 				<li>

@@ -6,12 +6,15 @@
 	{% for block in entry.matrix.all() %}
 		
 		{% if block.type == 'textblock' %}
+			{% set asset = block.bildImText.one() %}
 			{% set count = count+1 %}
 			<div class="{{block.sb}}">
-				{{ block.txtblck1 }}
+			{% if asset %}
+			<img src="{{asset.url}}" style="float:{{block.bildposition}}; margin: 5px; width:20%;" >
+			{% endif %}
+			<p>{{ block.txtblck1 }}</p>
 			</div>
 		{% endif %}
-		
 		{% if block.type == 'gallery' %}
 			{% set count = count+1 %}
 			<div class="col s12">
@@ -26,7 +29,7 @@
 									<div class="caption center-align galleriebox">
 										<h3>{{image.bildbeschreibung}}</h3>
 										<span>Bild von&nbsp{{image.bildauthor}}&nbspQuelle:&nbsp
-										<a href="{{asset.bildquelle}}">{{image.bildquelle}}</a></span>
+										<a href="{{image.bildquelle}}">{{image.bildquelle}}</a></span>
 										<span>Bildlizenzart:&nbsp{{image.bildlizenz}}</span>
 									</div>
 								</li>
@@ -220,6 +223,16 @@
 				</div>
 			{% endif %}
 			{# --------------------QUIZ ENDE---------------- #}
+			{% if block.type == 'lighthouse' %}
+			{% set count = count+1 %}
+			{% set asset = block.einzelbild.one() %}
+			{% if asset %}
+				<div class="{{block.spaltenbreite}}">
+					<img class="responsive-img tooltipped" data-position="bottom"
+					data-tooltip="{{asset.bildbeschreibung}}" src="{{asset.url}}" width="100%">
+				</div>
+			{% endif %}
+			{% endif %}
 		{% endfor %}
 		<script type="text/javascript">
 		</script>

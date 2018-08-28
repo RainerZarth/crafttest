@@ -10,7 +10,7 @@
 			<h1 id="headline">{{entry.mainheader}}</h1>
 		{% endfor %}
 	</div>
-	{% set entry = craft.entries.section('reptilien') %}
+	{% set entry = craft.entries.section('reptilien').all() %}
 	<ul>
         {% nav page in entry %}
             <li>
